@@ -9,9 +9,9 @@ profile:
     methods for improving the reliability of language models and the safety
     of tool-using agents. My past work includes deception detection and
     adversarial safety evaluation.
-  photo: ""
+  photo: "images/profile.jpg"
   email: "siyuan-c23@mails.tsinghua.edu.cn"
-  cv: ""
+  cv: "files/CV.pdf"
   scholar: "https://scholar.google.com/citations?user=hrUgtF0AAAAJ&hl=en"
   github: "https://github.com/felixsychen"
   website: ""
@@ -34,7 +34,7 @@ publications:
       and study how deception features compose across settings. The work
       develops methods for extracting complementary deception subspaces and
       adapting detection to new domains with limited labeled data.
-    image: ""
+    image: "images/Decap.png"
     highlighted: true
     links: []
 
@@ -51,7 +51,7 @@ publications:
       account. On GPT-2's Indirect Object Identification and Greater-Than
       tasks, it recovers five of seven reference component families, with an
       overall Jaccard similarity of 0.907.
-    image: ""
+    image: "images/Tacit.png"
     highlighted: false
     links: []
 
