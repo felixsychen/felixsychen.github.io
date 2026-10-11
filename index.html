@@ -1,0 +1,106 @@
+---
+layout: null
+---
+{% assign content = site.data.content %}
+{% assign profile = content.profile %}
+{% assign display_name = profile.name | default: site.title %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ profile.intro | default: site.description | strip_html | escape }}">
+    <title>{{ display_name | escape }}</title>
+    <link rel="stylesheet" href="{{ '/stylesheet.css' | relative_url }}">
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro-grid{% if profile.photo == empty %} no-photo{% endif %}">
+        <div class="intro-copy">
+          <h1>{{ display_name | escape }}</h1>
+          {% if profile.role != empty or profile.affiliation != empty %}
+          <p class="subtitle">
+            {% if profile.role != empty %}{{ profile.role | escape }}{% endif %}
+            {% if profile.role != empty and profile.affiliation != empty %}<span class="separator"> · </span>{% endif %}
+            {% if profile.affiliation != empty %}{{ profile.affiliation | escape }}{% endif %}
+          </p>
+          {% endif %}
+
+          {% if profile.intro != empty %}
+          <div class="prose">{{ profile.intro | markdownify }}</div>
+          {% else %}
+          <p class="coming-soon">This academic homepage is being prepared.</p>
+          {% endif %}
+
+          <nav class="profile-links" aria-label="Profile links">
+            {% if profile.email != empty %}<a href="mailto:{{ profile.email | escape }}">Email</a>{% endif %}
+            {% if profile.cv != empty %}<a href="{{ profile.cv | relative_url }}">CV</a>{% endif %}
+            {% if profile.scholar != empty %}<a href="{{ profile.scholar | escape }}">Google Scholar</a>{% endif %}
+            {% if profile.github != empty %}<a href="{{ profile.github | escape }}">GitHub</a>{% endif %}
+            {% if profile.website != empty %}<a href="{{ profile.website | escape }}">Website</a>{% endif %}
+          </nav>
+        </div>
+        {% if profile.photo != empty %}
+        <div class="portrait-wrap">
+          <img class="portrait" src="{{ profile.photo | relative_url }}" alt="Portrait of {{ display_name | escape }}">
+        </div>
+        {% endif %}
+      </header>
+
+      {% if content.research.summary != empty or content.publications.size > 0 %}
+      <section aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+        {% if content.research.summary != empty %}
+        <div class="prose section-summary">{{ content.research.summary | markdownify }}</div>
+        {% endif %}
+        {% for publication in content.publications %}
+        <article class="work-row{% if publication.highlighted %} highlighted{% endif %}">
+          {% if publication.image != empty %}
+          <div class="work-image"><img src="{{ publication.image | relative_url }}" alt="Illustration for {{ publication.title | escape }}" loading="lazy"></div>
+          {% else %}
+          <div class="work-image work-image-empty" aria-hidden="true"></div>
+          {% endif %}
+          <div class="work-copy">
+            <h3>{{ publication.title | escape }}</h3>
+            {% if publication.authors != empty %}<p class="authors">{{ publication.authors | escape }}</p>{% endif %}
+            {% if publication.venue != empty or publication.year != empty %}<p class="venue">{{ publication.venue | escape }}{% if publication.venue != empty and publication.year != empty %}, {% endif %}{{ publication.year | escape }}</p>{% endif %}
+            {% if publication.links.size > 0 %}<p class="work-links">{% for link in publication.links %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% unless forloop.last %}<span aria-hidden="true"> / </span>{% endunless %}{% endfor %}</p>{% endif %}
+            {% if publication.summary != empty %}<div class="prose work-summary">{{ publication.summary | markdownify }}</div>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.experience.size > 0 %}
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Research Experience</h2>
+        {% for item in content.experience %}
+        <article class="experience-row">
+          <div><h3>{{ item.role | escape }}</h3><p class="institution">{{ item.institution | escape }}</p>{% if item.description != empty %}<div class="prose">{{ item.description | markdownify }}</div>{% endif %}</div>
+          {% if item.dates != empty %}<p class="dates">{{ item.dates | escape }}</p>{% endif %}
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.projects.size > 0 %}
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects</h2>
+        {% for project in content.projects %}
+        <article class="work-row">
+          {% if project.image != empty %}<div class="work-image"><img src="{{ project.image | relative_url }}" alt="Illustration for {{ project.title | escape }}" loading="lazy"></div>{% else %}<div class="work-image work-image-empty" aria-hidden="true"></div>{% endif %}
+          <div class="work-copy">
+            <h3>{{ project.title | escape }}</h3>
+            {% if project.links.size > 0 %}<p class="work-links">{% for link in project.links %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% unless forloop.last %}<span aria-hidden="true"> / </span>{% endunless %}{% endfor %}</p>{% endif %}
+            {% if project.description != empty %}<div class="prose work-summary">{{ project.description | markdownify }}</div>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      <footer>Layout inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</footer>
+    </main>
+  </body>
+</html>
