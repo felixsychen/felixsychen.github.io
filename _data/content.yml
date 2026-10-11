@@ -9,7 +9,7 @@ profile:
     methods for improving the reliability of language models and the safety
     of tool-using agents. My past work includes deception detection and
     adversarial safety evaluation.
-  photo: "images/profile.jpg"
+  photo: "images/profile.png"
   email: "siyuan-c23@mails.tsinghua.edu.cn"
   cv: "files/CV.pdf"
   scholar: "https://scholar.google.com/citations?user=hrUgtF0AAAAJ&hl=en"
@@ -34,7 +34,7 @@ publications:
       and study how deception features compose across settings. The work
       develops methods for extracting complementary deception subspaces and
       adapting detection to new domains with limited labeled data.
-    image: "images/Decap.png"
+    image: "images/Decep.png"
     highlighted: true
     links: []
 
