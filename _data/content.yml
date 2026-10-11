@@ -1,0 +1,26 @@
+# Edit this file to update the homepage. Leave unused fields empty.
+# Local files, such as a portrait or CV, use paths without a leading slash.
+profile:
+  name: ""
+  role: ""
+  affiliation: ""
+  intro: ""
+  photo: ""                 # Example: images/profile.jpg
+  email: ""
+  cv: ""                    # Example: files/CV.pdf
+  scholar: ""
+  github: ""
+  website: ""
+
+research:
+  summary: ""
+
+# Each item can contain: title, authors, venue, year, summary, image,
+# highlighted (true/false), and links (a list of label/url pairs).
+publications: []
+
+# Each item can contain: role, institution, dates, and description.
+experience: []
+
+# Each item can contain: title, description, image, and links.
+projects: []
