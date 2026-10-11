@@ -1,26 +1,93 @@
-# Edit this file to update the homepage. Leave unused fields empty.
-# Local files, such as a portrait or CV, use paths without a leading slash.
 profile:
-  name: ""
-  role: ""
-  affiliation: ""
-  intro: ""
-  photo: ""                 # Example: images/profile.jpg
-  email: ""
-  cv: ""                    # Example: files/CV.pdf
-  scholar: ""
-  github: ""
+  name: "Siyuan Chen"
+  role: "Undergraduate Student in Computer Science and Technology"
+  affiliation: "Tsinghua University"
+  intro: >
+    I am an undergraduate student in Computer Science and Technology at
+    Tsinghua University, expected to graduate in July 2027. My research
+    interests are in AI safety and alignment, particularly post-training
+    methods for improving the reliability of language models and the safety
+    of tool-using agents. My past work includes deception detection and
+    adversarial safety evaluation.
+  photo: ""
+  email: "siyuan-c23@mails.tsinghua.edu.cn"
+  cv: ""
+  scholar: "https://scholar.google.com/citations?user=hrUgtF0AAAAJ&hl=en"
+  github: "https://github.com/felixsychen"
   website: ""
 
 research:
-  summary: ""
+  summary: >
+    I am interested in improving the reliability and controllability of
+    language models, especially through post-training and alignment. My
+    research has examined deception across contexts and safety failures in
+    tool-using agents, with an emphasis on rigorous evaluation and methods
+    that generalize to adversarial settings.
 
-# Each item can contain: title, authors, venue, year, summary, image,
-# highlighted (true/false), and links (a list of label/url pairs).
-publications: []
+publications:
+  - title: "Why Static Probes Fail: Context Determines Deception Feature Composition"
+    authors: "Yao Huang*, Siyuan Chen*, Yinpeng Dong"
+    venue: "Submitted to ICLR"
+    year: "2027"
+    summary: >
+      We show that static probes transfer poorly across deception contexts
+      and study how deception features compose across settings. The work
+      develops methods for extracting complementary deception subspaces and
+      adapting detection to new domains with limited labeled data.
+    image: ""
+    highlighted: true
+    links: []
 
-# Each item can contain: role, institution, dates, and description.
-experience: []
+  - title: "TACIT: From Circuit Discovery to Testable Algorithmic Explanations"
+    authors: "Wenhao Li, Ziran Wang, Siyuan Chen, et al."
+    venue: "Submitted to ACL Rolling Review"
+    year: "2026"
+    summary: >
+      We introduce TACIT, an agentic framework that turns sparse task
+      circuits into testable algorithmic explanations. TACIT groups circuit
+      components by function, tests and refines component hypotheses using
+      attention, causal-intervention, and direct-output evidence, and
+      assembles validated explanations into a circuit-level information-flow
+      account. On GPT-2's Indirect Object Identification and Greater-Than
+      tasks, it recovers five of seven reference component families, with an
+      overall Jaccard similarity of 0.907.
+    image: ""
+    highlighted: false
+    links: []
 
-# Each item can contain: title, description, image, and links.
+experience:
+  - role: "Visiting Scholar, LLM Agent Red Teaming and Safety Evaluation"
+    institution: "University of Illinois Urbana-Champaign; Advisor: Prof. Bo Li"
+    dates: "Jun. 2026 – Sep. 2026"
+    description: >
+      Co-developed an automated pipeline for generating adversarial
+      scenarios and evaluating LLM agents across safety categories, including
+      critical unauthorized data loss and intellectual property. Also
+      co-developed a modular runtime and evaluation framework for multi-step
+      tool use and MCP-backed simulated applications, and conducted
+      large-scale evaluations of frontier agents across risk categories,
+      application domains, and attack vectors.
+
+  - role: "Research Assistant, AI Deception Detection and Robustness"
+    institution: "T-STAR Lab, Tsinghua University; Advisor: Prof. Yinpeng Dong"
+    dates: "Sep. 2025 – May 2026"
+    description: >
+      Characterized deception as a context-dependent, multidimensional
+      subspace and studied the limits of static linear probes. Contributed to
+      Iterative Orthogonal Subspace Decomposition (IOSD) and Dynamic
+      Deception Subspace Navigation (DDSN), including a domain-adaptive
+      gating mechanism that achieved 0.96 AUROC with 10-shot test-time
+      adaptation. Led much of the engineering and experimental work,
+      including cross-model and cross-layer comparisons and dataset
+      adaptation.
+
+  - role: "Research Assistant, Mechanistic Interpretability of Transformers"
+    institution: "THUNLP, Tsinghua University; Advisor: Prof. Maosong Sun"
+    dates: "Feb. 2025 – Aug. 2025"
+    description: >
+      Co-developed TACIT, an agentic framework that moves from sparse
+      circuit discovery toward testable algorithmic explanations. Designed
+      LLM-agent workflows to generate and refine component hypotheses using
+      attention patterns, causal interventions, and direct-output evidence.
+
 projects: []
